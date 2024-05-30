@@ -8,6 +8,28 @@ body {
   height: 100%;
 }
 
+header {
+  background-color: #dbb9b9;
+  color: #000000;
+  padding: 2rem;
+  text-align: center; /* Center-align the content */
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 2rem;
+}
+
+nav ul li a {
+  color: #000000;
+  text-decoration: none;
+}
 
 
 h1 {
@@ -67,11 +89,25 @@ h1 {
   }
 }
 
+.grid-item p {
+  display: none;
+transition: scale 0.3s;
+}
+
+•grid-item:hover p { display: block;
+}
+
 /* Add this CSS to center the grid */
 #project-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.grid-item p {display: none;
+transition: scale 2s;
+}
+.grid-item:hover p { display: block;
 }
 
 .grid-item {
@@ -90,3 +126,42 @@ h1 {
 
 
 
+footer {
+  background-color: #dbb9b9; /* Light gray background color */
+  padding: 10px; /* Add some padding */
+  text-align: center; /* Center-align the content */
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.social-links {
+  list-style: none; /* Remove default list styles */
+  padding: 0;
+  margin: 0;
+}
+
+.social-links li {
+  display: inline-block; /* Display list items horizontally */
+  margin-right: 10px; /* Add some spacing between items */
+}
+
+.social-links li:last-child {
+  margin-right: 0; /* Remove margin from the last item */
+}
+
+.social-links a {
+  color: #333; /* Set link color */
+  text-decoration: none; /* Remove underline */
+}
+
+.social-links a:hover {
+  text-decoration: underline; /* Add underline on hover */
+}
+
+.footer-info span {
+  color: #666; /* Set color for copyright text */
+}

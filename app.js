@@ -19,46 +19,16 @@ async function getProjects() {
 
 function displayProjectsGrid(projects) {
   const projectsGrid = document.querySelector("#project-grid");
-  for (const project of projects) {
-    const article = document.createElement('article');
-    article.classList.add('grid-item');
-    
-    const img = document.createElement('img');
-    img.src = project.acf.image;
-    img.alt = project.title.rendered;
-    
-    const h2 = document.createElement('h2');
-    h2.textContent = project.title.rendered;
-    
-    const p = document.createElement('p');
-    p.textContent = project.acf.description;
-    p.classList.add('description'); // Add description class
-    p.style.display = 'none'; // Initially hide description
-    
-    // Add event listeners for mouseover and mouseout to show/hide description
-    img.addEventListener('mouseover', () => {
-      p.style.display = 'block';
-    });
-    
-    img.addEventListener('mouseout', () => {
-      p.style.display = 'none';
-    });
-    
-    article.appendChild(img);
-    article.appendChild(h2);
-    article.appendChild(p);
-    
-    projectsGrid.appendChild(article);
+  for (const project of projects) { // Corrected the parameter name in the for...of loop
+    projectsGrid.insertAdjacentHTML(
+      "beforeend",
+      `    
+      <article class="grid-item">
+        <img src="${project.acf.image}" alt="${project.title.rendered}">
+        <h2>${project.title.rendered}</h2>
+        <p>${project.acf.description}</p> <!-- Corrected the property name -->
+      </article>
+      `
+    );
   }
 }
-
-
-
-
-
-/*
-<p>${project.acf.client}</p>
-<p><a href="${project.acf.link}" target="_blank">View Project</a></p>
- <p>${project.acf.type}</p>
- */
-
